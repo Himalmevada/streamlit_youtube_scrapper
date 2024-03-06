@@ -6,11 +6,17 @@ import pandas as pd
 from bs4 import BeautifulSoup
 import streamlit as st
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
+
 
 @st.cache_data()
 def scrape_youtube_data(url):
     # driver = webdriver.Chrome() # Offline
-    driver = webdriver.Chrome(ChromeDriverManager().install())  # Online
+    # driver = webdriver.Chrome(ChromeDriverManager().install())  # Online
+    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+    
     driver.get(url)
     driver.maximize_window()
 
