@@ -5,7 +5,6 @@ import time
 import pandas as pd
 from bs4 import BeautifulSoup
 import streamlit as st
-import seaborn as sns
 
 
 @st.cache_data()
