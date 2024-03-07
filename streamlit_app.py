@@ -18,8 +18,7 @@ def scrape_youtube_data(url):
     
     # chrome_service = ChromeService(ChromeDriverManager().install())
     # driver = webdriver.Chrome(service=chrome_service, options=options)
-    # driver = webdriver.Chrome(service=ChromeDriverManager().install(), options=options)
-    driver = webdriver.Chrome(service=ChromeDriverManager().chrome_service, options=options)
+    driver = webdriver.Chrome(service=ChromeDriverManager().install(), options=options)
     
     driver.get(url)
     driver.maximize_window()
