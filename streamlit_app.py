@@ -10,7 +10,6 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 
 @st.cache_data()
 def scrape_youtube_data(url):
-    driver = webdriver.Chrome() # Offline
     options = webdriver.ChromeOptions()
     options.add_argument("--headless")
     options.add_argument("--disable-gpu")
