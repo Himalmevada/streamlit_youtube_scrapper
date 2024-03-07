@@ -17,18 +17,12 @@ from webdriver_manager.utils import ChromeType
 @st.cache_data()
 def scrape_youtube_data(url):
     # driver = webdriver.Chrome() # Offline
-    # driver = webdriver.Chrome(ChromeDriverManager().install())  # Online
-    # driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
-    # options = webdriver.ChromeOptions()
-    # options.add_argument("--headless")
-    # options.add_argument("--disable-gpu")
-    # options.add_argument("--no-sandbox")
-    # options.add_argument("--disable-dev-shm-usage")
-
-    # driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), options=options)
-    # driver = webdriver.Chrome(ChromeDriverManager().install())
-    
-    driver = webdriver.Chrome(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
+    options = webdriver.ChromeOptions()
+    options.add_argument("--headless")
+    options.add_argument("--disable-gpu")
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
+    driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), options=options)
     driver.get(url)
     driver.maximize_window()
 
