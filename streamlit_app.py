@@ -17,8 +17,9 @@ def scrape_youtube_data(url):
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
     
-    chrome_service = ChromeService(ChromeDriverManager().install())
-    driver = webdriver.Chrome(service=chrome_service, options=options)
+    # chrome_service = ChromeService(ChromeDriverManager().install())
+    # driver = webdriver.Chrome(service=chrome_service, options=options)
+    driver = webdriver.Chrome(service=ChromeDriverManager().install(), options=options)
     
     driver.get(url)
     driver.maximize_window()
