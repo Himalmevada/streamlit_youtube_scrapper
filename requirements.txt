@@ -2,4 +2,4 @@ streamlit==1.31.1
 selenium==4.0.0
 pandas==2.0.3
 beautifulsoup4==4.12.2
-webdriver_manager==3.2.2
+webdriver_manager==4.0.0
