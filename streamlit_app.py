@@ -6,6 +6,7 @@ import pandas as pd
 from bs4 import BeautifulSoup
 import streamlit as st
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service as ChromeService
 
 @st.cache_data()
 def scrape_youtube_data(url):
@@ -16,7 +17,9 @@ def scrape_youtube_data(url):
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
     
-    driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(),options=options)
+    chrome_service = ChromeService(ChromeDriverManager().install())
+    driver = webdriver.Chrome(service=chrome_service, options=options)
+    
     driver.get(url)
     driver.maximize_window()
 
