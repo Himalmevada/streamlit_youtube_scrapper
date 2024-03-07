@@ -80,7 +80,7 @@ if url:
 
         st.subheader(yt_channel_name)
 
-        st.write(df, unsafe_allow_html=True)
+        st.dataframe(df, unsafe_allow_html=True)
 
         csv_file = df.to_csv(index=False)
 
